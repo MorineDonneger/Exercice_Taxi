@@ -13,15 +13,14 @@
 
 "use strict";
 
-// J'ai affecté des valeurs nécessaires pour le code à des variable et j'ai crée un tableau avec les 5 musiques
-let prenom = "John";
-let pointSanteMentale = 10;
-let musiques = ["Anissa de Wejdene","Call Out My Name de The Weeknd","Lift Me Up de Rihanna","Alone de Burna Boy","Am I Dreaming de Metro Boomin"];
-let musiqueInterditAW = "Anissa de Wejdene"
-let feuxTotal = 30;
-let changements = 0;
-let radioMusique;
-let radioM;
+let prenom = "John"; //J'ai affécté à la variable prénom, le prénom de John
+let pointSanteMentale = 10; //Variable représentant la santé mentale de John
+let musiques = ["Anissa de Wejdene","Call Out My Name de The Weeknd","Lift Me Up de Rihanna","Alone de Burna Boy","Am I Dreaming de Metro Boomin"]; //Tableau avec les 5 musiques que la radio passe.
+let musiqueInterditAW = "Anissa de Wejdene" //Variable avec la musique que John ne supporte pas
+let feuxTotal = 30; //Nombre total de feu à passer pour que John arrive chez lui
+let changements = 0; //Nombre de changement de Taxi que John aura fait durant le trajet
+let radioMusique; //Variable pour générer un nombre aléatoire pour la musique diffusé à la radio
+let radioM; //Variable avec la musique diffusé
 
 function rencontreFeu(santeMentale,musiqueInterdit,feuxRouges,changements){ //Je créé une fonction avec les paramètre necessaire.
     while(santeMentale != 0 && feuxRouges > 0){ //Tant qu'il reste d'un feu rouge à passer ET que sa santé mentale n'est pas détruite, la boucle s'exécute
@@ -61,4 +60,4 @@ function rencontreFeu(santeMentale,musiqueInterdit,feuxRouges,changements){ //Je
     }
 }
 
-rencontreFeu(pointSanteMentale,musiqueInterditAW,feuxTotal,changements);
+rencontreFeu(pointSanteMentale,musiqueInterditAW,feuxTotal,changements); //Appel de la fonction dans le navigateur pour effectuer le programme
