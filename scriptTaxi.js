@@ -15,18 +15,18 @@
 
 let prenom = "John"; //J'ai affécté à la variable prénom, le prénom de John
 let pointSanteMentale = 10; //Variable représentant la santé mentale de John
-let musiques = ["Anissa de Wejdene","Call Out My Name de The Weeknd","Lift Me Up de Rihanna","Alone de Burna Boy","Am I Dreaming de Metro Boomin"]; //Tableau avec les 5 musiques que la radio passe.
+let musiques = ["Anissa de Wejdene","Call Out My Name de The Weeknd","Lift Me Up de Rihanna","Alone de Burna Boy","Am I Dreaming de Metro Boomin"]; //Tableau avec les 5 musiques que la radio passe
 let musiqueInterditAW = "Anissa de Wejdene" //Variable avec la musique que John ne supporte pas
 let feuxTotal = 30; //Nombre total de feu à passer pour que John arrive chez lui
-let changements = 0; //Nombre de changement de Taxi que John aura fait durant le trajet
-let radioMusique; //Variable pour générer un nombre aléatoire pour la musique diffusé à la radio
+let changements = 0; //Nombre de changement de Taxi que John aura fait durant le trajet, pour l'instant affecté à 0
+let radioMusique; //Variable pour générer un nombre aléatoire représentant la musique diffusé à la radio différente à chaque feu
 let radioM; //Variable avec la musique diffusé
 
-function rencontreFeu(santeMentale,musiqueInterdit,feuxRouges,changements){ //Je créé une fonction avec les paramètre necessaire.
-    while(santeMentale != 0 && feuxRouges > 0){ //Tant qu'il reste d'un feu rouge à passer ET que sa santé mentale n'est pas détruite, la boucle s'exécute
+function rencontreFeu(santeMentale,musiqueInterdit,feuxRouges,changements){ //Je créé une fonction avec les paramètres santeMentale, musiqueInterdit, feuxRouges et changements
+    while(santeMentale != 0 && feuxRouges > 0){ //Tant qu'il reste un feu rouge à passer ET que sa santé mentale n'est pas détruite, la boucle s'exécute
         radioMusique = (Math.floor(Math.random() * 5 + 1)) //J'affecte un nombre aléatoire à radioMusique entre 1 et 5
 
-        switch(radioMusique){ //Je "transcrit" le chiffre aléatoire avec la musique avec qui il correspond
+        switch(radioMusique){ //Je "transcrit" le chiffre aléatoire à la musique qui correspond
             case 1:
                 radioM = "Anissa de Wejdene";
                 break;
@@ -45,18 +45,18 @@ function rencontreFeu(santeMentale,musiqueInterdit,feuxRouges,changements){ //Je
         }
 
         if(radioM == musiqueInterdit){ //Si la musique qui passe à la radio est la musique détesté par le personnage,
-            santeMentale -- //Alors celle-ci descend de 1 point,
-            changements ++ //Et il change de Taxi donc dans changements on rajoute 1
+            santeMentale -- //Alors la santé mentale descend de 1 point,
+            changements ++ //Et il change de Taxi alors on ajoute 1 dans changements
             console.log(`La musique jouée est ${radioM}. John n'est pas content, il descend du taxi, en prend un autre et sa santé mentale est désormais à ${santeMentale}. Il reste toujours ${feuxRouges} feux à passer.`); //J'affiche dans le navigateur cette phrase
         }else{ //Si c'est une bonne musique qui passe,
             feuxRouges -- //On passe le feu rouge donc feuxRouges soustrait de 1
-            console.log(`La musique jouée est ${radioM} et il reste ${feuxRouges} feux à passer.`); //J'affiche sur le navigateur cette première phrase
+            console.log(`La musique jouée est ${radioM} et il reste ${feuxRouges} feux à passer.`); //J'affiche dans le navigateur cette première phrase
         }
     }
     if(santeMentale == 0){ //Si sa santé mentale est à 0,
         console.log(`Explosion de ${prenom} !!!`); //John est à bout, il n'a plus de santé mentale et on affiche ce message.
     }else if(santeMentale != 0){ //S'il ne reste plus de feu à passer et que sa santé mentale n'est pas à 0,
-        console.log(`${prenom} est bien arrivé chez lui. Il lui aura fallu ${changements} changements de Taxi`); //On affiche alors cette phrase
+        console.log(`${prenom} est bien arrivé chez lui. Il lui aura fallu ${changements} changements de Taxi.`); //On affiche alors cette phrase
     }
 }
 
